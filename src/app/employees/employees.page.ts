@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { Employee, EmployeesService } from '../services/employees.service';
-import { Observable, of, combineLatest, Subscription } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 import { ToastService } from '../services/toast.service';
 import { catchError, tap } from 'rxjs/operators';
 import { IonSearchbar } from '@ionic/angular';
-import { InputChangeEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-employees',
@@ -20,7 +19,7 @@ export class EmployeesPage implements OnInit, OnDestroy, AfterViewInit {
   private employees: Employee[];
   private subscriptions = new Subscription();
 
-  @ViewChild(IonSearchbar, { static: false }) ionSearchBar: IonSearchbar;
+  @ViewChild('searchbar') ionSearchBar: IonSearchbar;
 
   constructor(private employeesService: EmployeesService, private toastService: ToastService) { }
 
