@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Device info
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="deviceInfo$ | async as deviceInfo" class="info-container">
+    <p>Manufacturer: {{deviceInfo.manufacturer}}</p>
+    <p>Brand: {{deviceInfo.brand}}</p>
+    <p>Hardware: {{deviceInfo.hardware}}</p>
+  </div>
+</ion-content>

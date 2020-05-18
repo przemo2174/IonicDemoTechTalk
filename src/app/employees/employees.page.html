@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Employees</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Name</ion-label>
+      <ion-label>Salary</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let employee of filteredEmployees">
+      <ion-label>{{employee.employee_name}}</ion-label>
+      <ion-label>{{employee.employee_salary}}$</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
